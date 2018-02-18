@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+public class Search{
+    //public static var foundNode: Node
+    
+    
+}

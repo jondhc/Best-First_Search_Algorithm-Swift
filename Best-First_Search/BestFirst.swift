@@ -8,4 +8,22 @@
 
 import Foundation
 
-
+public class BestFirst {
+    var found: Bool
+    
+    init(){
+        self.found = false
+    }
+    
+    
+    
+    private static func bestFirst(node: Node, goal: Node){
+        var nextChild: Node
+        var i : Int
+        var route: Array<Node>
+        
+//        if (!found){
+//
+//        }
+    }   //end bestFirst
+} //end BestFirst
