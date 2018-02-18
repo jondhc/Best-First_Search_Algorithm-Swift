@@ -14,6 +14,7 @@ public class Knowledge{
         var candidates: [String]
         candidates = []
         
+        
         return candidates
     } //end getCommitments
     

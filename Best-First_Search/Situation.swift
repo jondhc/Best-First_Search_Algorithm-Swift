@@ -33,12 +33,30 @@ public class Situation{
         var targetY: Int
         var differenceX: Int
         var differenceY: Int
+        var absDifferenceX: Double
+        var absDifferenceY: Double
         
         manhattanDistance = 0
-        
+        i = 0
+        while(i < 3){
+            j = 0
+            while (j < 3){
+                token = matrix[i][j]
+                if(token != 0){
+                    targetX = (token - 1) / 3
+                    targetY = (token - 1) % 3
+                    differenceX = i - targetX
+                    differenceY = j - targetY
+                    absDifferenceX = Double.init(abs(differenceX))
+                    absDifferenceY = Double.init(abs(differenceY))
+                    manhattanDistance = manhattanDistance + absDifferenceX + absDifferenceY
+                } //end if
+                j = j + 1
+            } //end while
+            i = i + 1
+        } //end while
         return manhattanDistance
-        
-    }
+    } //end manhattanDistance
     
     public func heuristicFunction() -> Double{
         var value : Double

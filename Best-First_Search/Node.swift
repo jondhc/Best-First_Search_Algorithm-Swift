@@ -85,8 +85,21 @@ public class Node{
     public func expand () -> Void{
         var i : Int
         numberOfExpantions = numberOfExpantions + 1
-        
+        children = Knowledge.getNextPossibleNodes(state: state)
+        if(children != []){
+            i = 0
+            while(i < children.count){
+                children[i].setParent(aNode: self)
+                i = i + 1
+            } //end while
+        } //end if
     } //end expand
+    
+    public func showState() -> Void{
+        print(state)
+    } //end showState
+    
+    //Pending to implement printing method
     
 } //end Node
 
