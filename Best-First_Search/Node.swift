@@ -16,15 +16,11 @@ public class Node{
     var numberOfExpantions: Int = 0
     static var random = arc4random()
     
-    public func Node(){
+    init() {
         children = []
-    } //end Node
-    
-    init(parent: Node, state: Situation, heuristicValue: Double, children: [Node]) {
-        self.parent = parent
-        self.state = state
-        self.heuristicValue = heuristicValue
-        self.children = children
+        parent = Node.init()
+        state = Situation.init()
+        heuristicValue = 0
     } //end init
     
     public func getState()->Situation{

@@ -17,14 +17,13 @@ public class Knowledge{
         return candidates
     } //end getCommitments
     
-//    private static func createNode(aState: Situation, aCommitment: String) -> Node{
-//        var newNode: Node
-//        var newState: Situation
-//        newNode = Node.init(parent: <#T##Node#>, state: <#T##Situation#>, heuristicValue: <#T##Double#>, children: <#T##[Node]#>)
-//        
-//        
-//        return newNode
-//    } //end createNode
+    private static func createNode(aState: Situation, aCommitment: String) -> Node{
+        var newNode: Node
+        var newState: Situation
+        newNode = Node.init()
+        
+        return newNode
+    } //end createNode
     
     public static func getNextPossibleNodes(state: Situation)->[Node]{
         var possibleNodes: [Node]
@@ -37,10 +36,10 @@ public class Knowledge{
         i = 0
         while(i < commitments.count){
             aCommitment = commitments[i]
-            
+            node = createNode(aState: state, aCommitment: aCommitment)
+            possibleNodes.append(node)
+            i = i + 1
         } //end while
-        
-        
         return possibleNodes
     } // end getNextPossibleNodes
 } //end knowledge

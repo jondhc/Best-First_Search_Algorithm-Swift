@@ -12,8 +12,8 @@ public class Situation{
     
     var matrix = [[Int]]()
     
-    init(matrix: [[Int]]){
-        self.matrix = Array(repeating: Array(repeating: 0, count: 3), count: 3)
+    init(){
+        matrix = Array(repeating: Array(repeating: 0, count: 3), count: 3)
     }
     
     public func getMatrix() -> [[Int]]{
