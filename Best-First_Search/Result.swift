@@ -9,5 +9,24 @@
 import Foundation
 
 public class Result{
+    private var found: Bool
+    private var plan: [Node]
     
-}
+    init(){
+        found = false
+        plan = []
+    } //end init
+    
+    public func setFound(hasBeenFound: Bool) -> Void{
+        found = hasBeenFound
+    } //end setFound
+    
+    public func getPlan() -> [Node]{
+        return plan
+    } //end getPlan
+    
+    public func setPlan(aPlan: [Node]) -> Void{
+        plan = aPlan
+    } //end setPlan
+    
+} //end Result
