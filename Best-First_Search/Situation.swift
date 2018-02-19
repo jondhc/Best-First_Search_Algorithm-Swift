@@ -10,7 +10,7 @@ import Foundation
 
 public class Situation{
     
-    var matrix = [[Int]]()
+    var matrix:  [[Int]]
     
     init(){
         matrix = Array(repeating: Array(repeating: 0, count: 3), count: 3)
@@ -62,5 +62,21 @@ public class Situation{
         var value : Double
         value = manhattanDistance()
         return value
-    }
+    } //end heuristicFunction
+    
+    public func representSituation() -> String{
+        var string: String
+        string = "\n"
+        string = "\(string) \(matrix[0][0]) "
+        string = "\(string) \(matrix[0][1]) "
+        string = "\(string) \(matrix[0][2]) \n"
+        string = "\(string) \(matrix[1][0]) "
+        string = "\(string) \(matrix[1][1]) "
+        string = "\(string) \(matrix[1][2]) \n"
+        string = "\(string) \(matrix[2][0]) "
+        string = "\(string) \(matrix[2][1]) "
+        string = "\(string) \(matrix[2][2]) \n\n"
+        return string
+    } //end representSituation
+    
 } //end situation

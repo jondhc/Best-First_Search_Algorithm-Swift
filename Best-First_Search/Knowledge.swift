@@ -13,7 +13,78 @@ public class Knowledge{
     public static func getCommitments(state: Situation) -> [String]{
         var candidates: [String]
         candidates = []
-        
+        if(state.matrix[0][0] == 0){
+            candidates.append("left")
+        } //end if
+        if(state.matrix[0][0] == 0){
+            candidates.append("up")
+        } //end if
+        if(state.matrix[0][1] == 0){
+            candidates.append("left")
+        } //end if
+        if(state.matrix[0][1] == 0){
+            candidates.append("right")
+        } //end if
+        if(state.matrix[0][1] == 0){
+            candidates.append("up")
+        } //end if
+        if(state.matrix[0][2] == 0){
+            candidates.append("right")
+        } //end if
+        if(state.matrix[0][2] == 0){
+            candidates.append("up")
+        } //end if
+        if(state.matrix[1][0] == 0){
+            candidates.append("down")
+        } //end if
+        if(state.matrix[1][0] == 0){
+            candidates.append("up")
+        } //end if
+        if(state.matrix[1][0] == 0){
+            candidates.append("left")
+        } //end if
+        if(state.matrix[1][1] == 0){
+            candidates.append("down")
+        } //end if
+        if(state.matrix[1][1] == 0){
+            candidates.append("right")
+        } //end if
+        if(state.matrix[1][1] == 0){
+            candidates.append("left")
+        } //end if
+        if(state.matrix[1][1] == 0){
+            candidates.append("up")
+        } //end if
+        if(state.matrix[1][2] == 0){
+            candidates.append("down")
+        } //end if
+        if(state.matrix[1][2] == 0){
+            candidates.append("right")
+        } //end if
+        if(state.matrix[1][2] == 0){
+            candidates.append("up")
+        } //end if
+        if(state.matrix[2][0] == 0){
+            candidates.append("down")
+        } //end if
+        if(state.matrix[2][0] == 0){
+            candidates.append("left")
+        } //end if
+        if(state.matrix[2][1] == 0){
+            candidates.append("down")
+        } //end if
+        if(state.matrix[2][1] == 0){
+            candidates.append("right")
+        } //end if
+        if(state.matrix[2][1] == 0){
+            candidates.append("left")
+        } //end if
+        if(state.matrix[2][2] == 0){
+            candidates.append("down")
+        } //end if
+        if(state.matrix[2][2] == 0){
+            candidates.append("right")
+        } //end if
         
         return candidates
     } //end getCommitments
