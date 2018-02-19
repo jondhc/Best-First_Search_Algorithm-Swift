@@ -8,3 +8,56 @@
 
 import Foundation
 
+
+public func showPlan(plan: [Node]) -> Void{
+    var i: Int
+    i = 0
+    while(i < plan.count){
+        print(plan[i])
+        i = i + 1
+    } //end while
+    print("NUBER OF MOVES: ")
+    print("\(plan.count - 1)")
+} //end showPlan
+
+public func showNextMove(plan: [Node]) -> Void{
+    print(plan[1])
+} //end showNextMove
+
+var initialState: Situation
+var finalState: Situation
+var matrix: [[Int]]
+var result: Result
+var plan: [Node]
+matrix = Array(repeating: Array(repeating: 0, count: 3), count: 3)
+matrix[0][0] = 0
+matrix[0][1] = 2
+matrix[0][2] = 3
+matrix[1][0] = 5
+matrix[1][1] = 8
+matrix[1][2] = 6
+matrix[2][0] = 1
+matrix[2][1] = 4
+matrix[2][2] = 7
+initialState = Situation.init()
+initialState.setMatrix(aMatrix: matrix)
+
+matrix = Array(repeating: Array(repeating: 0, count: 3), count: 3)
+matrix[0][0] = 1
+matrix[0][1] = 2
+matrix[0][2] = 3
+matrix[1][0] = 4
+matrix[1][1] = 5
+matrix[1][2] = 6
+matrix[2][0] = 7
+matrix[2][1] = 8
+matrix[2][2] = 0
+finalState = Situation.init()
+finalState.setMatrix(aMatrix: matrix)
+
+result = BestFirst.search(initialState: initialState, finalState: finalState)
+plan = result.getPlan()
+showPlan(plan: plan)
+
+
+

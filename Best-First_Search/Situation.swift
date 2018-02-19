@@ -80,3 +80,24 @@ public class Situation{
     } //end representSituation
     
 } //end situation
+
+extension Situation: Equatable{
+    public static func == (aSituation: Situation, anotherSituation: Situation) -> Bool{
+        var i: Int
+        var j: Int
+        var areEqual: Bool
+        areEqual = true
+        i = 0
+        while(1 < 3){
+            j = 0
+            while(j < 3){
+                if(aSituation.matrix[i][j] != anotherSituation.matrix[i][j]){
+                    areEqual = false
+                } //end if
+                j = j + 1
+            } //end while
+            i = i + 1
+        } //end while
+        return areEqual
+    } //end ==
+} //end Equatable
