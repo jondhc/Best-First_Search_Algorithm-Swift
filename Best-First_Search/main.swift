@@ -30,15 +30,15 @@ var matrix: [[Int]]
 var result: Result
 var plan: [Node]
 matrix = Array(repeating: Array(repeating: 0, count: 3), count: 3)
-matrix[0][0] = 0
+matrix[0][0] = 1
 matrix[0][1] = 2
 matrix[0][2] = 3
-matrix[1][0] = 5
-matrix[1][1] = 8
+matrix[1][0] = 4
+matrix[1][1] = 5
 matrix[1][2] = 6
-matrix[2][0] = 1
-matrix[2][1] = 4
-matrix[2][2] = 7
+matrix[2][0] = 7
+matrix[2][1] = 0
+matrix[2][2] = 8
 initialState = Situation.init()
 initialState.setMatrix(aMatrix: matrix)
 
