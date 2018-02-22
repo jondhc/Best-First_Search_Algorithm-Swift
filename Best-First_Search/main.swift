@@ -13,7 +13,9 @@ public func showPlan(plan: [Node]) -> Void{
     var i: Int
     i = 0
     while(i < plan.count){
-        print(plan[i])
+        //print(plan[i])
+        var plan: String = plan[i].getState()!.representSituation()
+        print(plan)
         i = i + 1
     } //end while
     print("NUMBER OF MOVES: ")
@@ -29,6 +31,7 @@ var finalState: Situation
 var matrix: [[Int]]
 var result: Result
 var plan: [Node]
+
 matrix = Array(repeating: Array(repeating: 0, count: 3), count: 3)
 matrix[0][0] = 8
 matrix[0][1] = 7
