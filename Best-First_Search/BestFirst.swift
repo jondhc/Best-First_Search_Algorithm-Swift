@@ -16,7 +16,7 @@ public class BestFirst: Search{
         var route: [Node]
         if(found == false){
             node.expand()
-            memory!.append(node.getState())
+            memory.append(node.getState()!)
             node.sortChildren()
             if(node.getChildren() != []){
                 i = 0
@@ -26,7 +26,7 @@ public class BestFirst: Search{
                         found = true
                         foundNode = nextChild
                     } //end if
-                    else if(memory!.contains(nextChild.getState()) == false){
+                    else if(memory.contains(nextChild.getState()!) == false){
                         result = bestFirst(node: nextChild, goal: goal)
                     } //end else if
                     i = i + 1
@@ -47,18 +47,18 @@ public class BestFirst: Search{
     
     public static func search(initialState: Situation, finalState: Situation) -> Result{
         var route: [Node]
-        var root: Node
+        var root = Node()
         var goal: Node
         var memory: [Situation]
         
-        root = Node.init()
+        
         root.setState(aState: initialState)
-        goal = Node.init()
+        goal = Node()
         goal.setState(aState: finalState)
         found = false
-        result = Result.init()
+        result = Result()
         
-        if(root != nil){
+        if(root.getState() != nil){
             if(nodeIsFinalState(aNode: root, goal: goal) == false){
                 result = bestFirst(node: root, goal: goal)
             } //end if

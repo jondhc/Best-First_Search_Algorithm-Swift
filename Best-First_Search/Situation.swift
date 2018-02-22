@@ -88,7 +88,7 @@ extension Situation: Equatable{
         var areEqual: Bool
         areEqual = true
         i = 0
-        while(1 < 3){
+        while(i < 3){
             j = 0
             while(j < 3){
                 if(aSituation.matrix[i][j] != anotherSituation.matrix[i][j]){

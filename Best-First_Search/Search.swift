@@ -12,7 +12,7 @@ public class Search{
     public static var foundNode: Node?
     public static var found: Bool?
     public static var result: Result?
-    public static var memory: [Situation]?
+    public static var memory: [Situation] = []
     
     public static func nodeIsFinalState(aNode: Node, goal: Node) -> Bool{
         var isFinalState: Bool

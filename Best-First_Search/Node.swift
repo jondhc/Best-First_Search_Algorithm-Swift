@@ -9,31 +9,40 @@
 import Foundation
 
 public class Node{
-    private var parent: Node
-    var children: [Node]
-    private var state: Situation
+    private var parent: Node?
+    var children: [Node]?
+    private var state: Situation?
     var heuristicValue: Double
     var numberOfExpantions: Int = 0
     static var random = arc4random()
     
     init() {
-        children = []
-        parent = Node.init()
-        state = Situation.init()
+        children = nil
+        parent = nil
+        state = nil
         heuristicValue = 0
     } //end init
     
-    public func getState()->Situation{
+    
+    
+    public func getState()->Situation?{
         return state
     } //end getState
     
     public func setState(aState: Situation)->Void{
         state = aState
-        heuristicValue = state.heuristicFunction()
+        heuristicValue = (state?.heuristicFunction())!
     } //end setState
     
-    public func getParent() -> Node{
-        return parent
+    public func getParent() -> Node?{
+        if(parent != nil)
+        {
+            return parent!
+        }//end if
+        else
+        {
+            return nil
+        }//end else
     } //end getParent
     
     public func setParent(aNode: Node)->Void{
@@ -41,7 +50,7 @@ public class Node{
     } //end setParent
     
     public func getChildren()->[Node]{
-        return children
+        return children!
     } //end getChildren
     
     public func getRoute()->[Node]{
@@ -78,18 +87,18 @@ public class Node{
     
     
     public func sortChildren() -> Void {
-        children.sort()
-        children = changeOrderIfTwoBestChilds(orderedChildren: children)
+        children?.sort()
+        children = changeOrderIfTwoBestChilds(orderedChildren: children!)
     } //end sortChildren
     
     public func expand () -> Void{
         var i : Int
         numberOfExpantions = numberOfExpantions + 1
-        children = Knowledge.getNextPossibleNodes(state: state)
-        if(children != []){
+        children = Knowledge.getNextPossibleNodes(state: state!)
+        if(children! != []){
             i = 0
-            while(i < children.count){
-                children[i].setParent(aNode: self)
+            while(i < (children?.count)!){
+                children![i].setParent(aNode: self)
                 i = i + 1
             } //end while
         } //end if
