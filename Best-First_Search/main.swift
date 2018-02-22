@@ -58,8 +58,13 @@ matrix[2][2] = 0
 finalState = Situation()
 finalState.setMatrix(aMatrix: matrix)
 
+//BEST-FIRST SEARCH
+//result = BestFirst.search(initialState: initialState, finalState: finalState)
+//plan = result.getPlan()
+//showPlan(plan: plan)
 
-result = BestFirst.search(initialState: initialState, finalState: finalState)
+//BREADTH-FIRST SEARCH
+result = BreadthFirst.search(initialState: initialState, finalState: finalState)
 plan = result.getPlan()
 showPlan(plan: plan)
 
