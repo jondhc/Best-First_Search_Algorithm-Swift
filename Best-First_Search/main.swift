@@ -18,7 +18,7 @@ public func showPlan(plan: [Node]) -> Void{
         print(plan)
         i = i + 1
     } //end while
-    print("NUMBER OF MOVES: ")
+    print("NUMBER OF MOVES: ", terminator: " ")
     print("\(plan.count - 1)")
 } //end showPlan
 
